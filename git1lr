@@ -171,3 +171,4 @@ $ git reset 3ca4f4a
 nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
 $ git log --oneline
 3ca4f4a (HEAD -> master) komment lr1
+
