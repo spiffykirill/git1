@@ -1,0 +1,173 @@
+nelubin_ap@nelubin_pc MINGW64 ~ (master)
+$ cd d:/dd
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd
+$ git init
+Initialized empty Git repository in D:/dd/.git/
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git add 44.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   44.txt
+
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git commit -m "komment lr1"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <elik@example.com>) not allowed
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git config --global user.email "you@example.com"
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$   git config --global user.name "Your Name"
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$  git commit -m "komment lr1"
+[master (root-commit) 3ca4f4a] komment lr1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 44.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git add 55.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git commit -m "komment lr1 2"
+[master 98cdba1] komment lr1 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 55.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git log
+commit 98cdba1fac54cf6ca75e899433b4ef61d7c53e1f (HEAD -> master)
+Author: Your Name <you@example.com>
+Date:   Sun May 23 14:21:24 2021 +0300
+
+    komment lr1 2
+
+commit 3ca4f4a646f88cff58b18c37a2eef0fb844cb511
+Author: Your Name <you@example.com>
+Date:   Sun May 23 14:20:38 2021 +0300
+
+    komment lr1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git branch vetka
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git checkout vetka
+Switched to branch 'vetka'
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git add rr.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git add ff.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git status
+On branch vetka
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ff.txt
+        new file:   rr.txt
+
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git commit -m "komment lr1 3"
+[vetka 29f9ae9] komment lr1 3
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ff.txt
+ create mode 100644 rr.txt
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git merge vetka
+Already up to date.
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git checkout vetka
+Already on 'vetka'
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git checkout master
+Switched to branch 'master'
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git checkout vetka
+Switched to branch 'vetka'
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git status
+On branch vetka
+nothing to commit, working tree clean
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git log --oneline
+29f9ae9 (HEAD -> vetka) komment lr1 3
+98cdba1 (master) komment lr1 2
+3ca4f4a komment lr1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git reset
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git log --oneline
+29f9ae9 (HEAD -> vetka) komment lr1 3
+98cdba1 (master) komment lr1 2
+3ca4f4a komment lr1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (vetka)
+$ git checkout master
+Switched to branch 'master'
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git log --oneline
+98cdba1 (HEAD -> master) komment lr1 2
+3ca4f4a komment lr1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git reset
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git log --oneline
+98cdba1 (HEAD -> master) komment lr1 2
+3ca4f4a komment lr1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git reset 98cdba1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git log --oneline
+98cdba1 (HEAD -> master) komment lr1 2
+3ca4f4a komment lr1
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git reset 3ca4f4a
+
+nelubin_ap@nelubin_pc MINGW64 /d/dd (master)
+$ git log --oneline
+3ca4f4a (HEAD -> master) komment lr1
